@@ -1,15 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
   <meta charset="UTF-8">
-  <title>Page Title</title>
-  
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Bun Bun Bake Shop</title>
+
   <body>
+    <header class="header">
+        <img class="logo" src="../assets/logo/logo.svg" alt="logo"/>
+        <div class="navBar-container">
+            <div>
+                <ul class="navBar">
+                    <li>
+                        <a class="highlighted" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="popup-wrap">
+                        <a class="" href="#">CART</a>
+                        <!-- popup modal shows upon clicking "Add to Cart": https://codeconvey.com/css-modal-popup-on-button-click/ -->
+                        <div id="added-to-cart" class="overlay">
+                            <div class="popup">
+                                <p>
+                                    Added to cart:
+                                    <br><br>
+                                    <b>Raisin cinammon roll</b>
+                                    <br>Double chocolate glazing
+                                    <br>Pack of 6
+                                    <br>Price: $22.45
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <hr class="header-divider"/>
+            </div>
+            <p class="header-desc">Our hand-made cinnamon rolls</p>
+        </div>
+    </header>
 
-    <h1>I am the solution to HW1!</h1>
+    <div class="container">
+        <main class="product-container">
+            <ul class="product-list">
+                <li class="product-card">
+                    <img src="../assets/products/original-cinnamon-roll.jpg" alt="original-cinnamon-roll">
+                    <h3>Original cinnamon roll</h3>
+                    <div class="selection-container">
+                        <label for="original-glazing">Glazing:</label>
+                        <div class="dropdown-container">
+                            <select name="glazing" id="original-glazing">
+                                <option value="keep-original" selected>Keep Original</option>
+                                <option value="sugar-milk">Sugar Milk</option>
+                                <option value="vanilla-milk">Vanilla Milk</option>
+                                <option value="double-chocolate">Double Chocolate</option>
+                            </select>
+                            <!-- <span class="focus"></span> -->
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <p>Pack size:</p>
+                        <ul class="radio-set">
+                            <li>
+                                <input type="radio" value="1" name="radio" id="original-1">
+                                <label for="original-1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="3" name="radio" id="original-3">
+                                <label for="original-3">3</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="6" name="radio" id="original-6">
+                                <label for="original-6">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="12" name="radio" id="original-12">
+                                <label for="original-12">12</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selection-container action-container">
+                        <p class="product-price">$ 2.49</p>
+                        <a class="button highlighted" href="#added-to-cart">
+                            Add to Cart
+                        </a>
+                    </div>
+                </li>
 
-    <p>
-        And I can link to <a href="./otherpage.html">other pages.</a>
-    </p>
+                <li class="product-card">
+                    <img src="../assets/products/apple-cinnamon-roll.jpg" alt="apple-cinnamon-roll">
+                    <h3>Apple cinnamon roll</h3>
+                    <div class="selection-container">
+                        <label for="apple-cinnamon-glazing">Glazing:</label>
+                        <div class="dropdown-container">
+                            <select name="glazing" id="apple-cinnamon-glazing">
+                                <option value="keep-original" selected>Keep Original</option>
+                                <option value="sugar-milk">Sugar Milk</option>
+                                <option value="vanilla-milk">Vanilla Milk</option>
+                                <option value="double-chocolate">Double Chocolate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <p>Pack size:</p>
+                        <ul class="radio-set">
+                            <li>
+                                <input type="radio" value="1" name="radio" id="apple-cinnamon-1">
+                                <label for="apple-cinnamon-1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="3" name="radio" id="apple-cinnamon-3">
+                                <label for="apple-cinnamon-3">3</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="6" name="radio" id="apple-cinnamon-6">
+                                <label for="apple-cinnamon-6">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="12" name="radio" id="apple-cinnamon-12">
+                                <label for="apple-cinnamon-12">12</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selection-container action-container">
+                        <p class="product-price">$ 3.49</p>
+                        <a class="button highlighted" href="#added-to-cart">
+                            Add to Cart
+                        </a>
+                    </div>
+                </li>
+
+                <li class="product-card">
+                    <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="raisin-cinnamon-roll">
+                    <h3>Raisin cinnamon roll</h3>
+                    <div class="selection-container">
+                        <label for="raisin-glazing">Glazing:</label>
+                        <div class="dropdown-container">
+                            <select name="glazing" id="raisin-glazing">
+                                <option value="keep-original" selected>Keep Original</option>
+                                <option value="sugar-milk">Sugar Milk</option>
+                                <option value="vanilla-milk">Vanilla Milk</option>
+                                <option value="double-chocolate">Double Chocolate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <p>Pack size:</p>
+                        <ul class="radio-set">
+                            <li>
+                                <input type="radio" value="1" name="radio" id="raisin-1">
+                                <label for="raisin-1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="3" name="radio" id="raisin-3">
+                                <label for="raisin-3">3</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="6" name="radio" id="raisin-6">
+                                <label for="raisin-6">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="12" name="radio" id="raisin-12">
+                                <label for="raisin-12">12</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selection-container action-container">
+                        <p class="product-price">$ 2.99</p>
+                        <a class="button highlighted" href="#added-to-cart">
+                            Add to Cart
+                        </a>
+                    </div>
+                </li>
+
+                <li class="product-card">
+                    <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="walnut-cinnamon-roll">
+                    <h3>Walnut cinnamon roll</h3>
+                    <div class="selection-container">
+                        <label for="walnut-glazing">Glazing:</label>
+                        <div class="dropdown-container">
+                            <select name="glazing" id="walnut-glazing">
+                                <option value="keep-original" selected>Keep Original</option>
+                                <option value="sugar-milk">Sugar Milk</option>
+                                <option value="vanilla-milk">Vanilla Milk</option>
+                                <option value="double-chocolate">Double Chocolate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <p>Pack size:</p>
+                        <ul class="radio-set">
+                            <li>
+                                <input type="radio" value="1" name="radio" id="walnut-1">
+                                <label for="walnut-1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="3" name="radio" id="walnut-3">
+                                <label for="walnut-3">3</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="6" name="radio" id="walnut-6">
+                                <label for="walnut-6">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="12" name="radio" id="walnut-12">
+                                <label for="walnut-12">12</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selection-container action-container">
+                        <p class="product-price">$ 3.49</p>
+                        <a class="button highlighted" href="#added-to-cart">
+                            Add to Cart
+                        </a>
+                    </div>
+                </li>
+
+                <li class="product-card">
+                    <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="double-chocolate-cinnamon-roll">
+                    <h3>Double-chocolate cinnamon roll</h3>
+                    <div class="selection-container">
+                        <label for="d-chocolate-glazing">Glazing:</label>
+                        <div class="dropdown-container">
+                            <select name="glazing" id="d-chocolate-glazing">
+                                <option value="keep-original" selected>Keep Original</option>
+                                <option value="sugar-milk">Sugar Milk</option>
+                                <option value="vanilla-milk">Vanilla Milk</option>
+                                <option value="double-chocolate">Double Chocolate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <p>Pack size:</p>
+                        <ul class="radio-set">
+                            <li>
+                                <input type="radio" value="1" name="radio" id="d-chocolate-1">
+                                <label for="d-chocolate-1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="3" name="radio" id="d-chocolate-3">
+                                <label for="d-chocolate-3">3</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="6" name="radio" id="d-chocolate-6">
+                                <label for="d-chocolate-6">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="12" name="radio" id="d-chocolate-12">
+                                <label for="d-chocolate-12">12</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selection-container action-container">
+                        <p class="product-price">$ 3.99</p>
+                        <a class="button highlighted" href="#added-to-cart">
+                            Add to Cart
+                        </a>
+                    </div>
+                </li>
+
+                <li class="product-card">
+                    <img src="../assets/products/strawberry-cinnamon-roll.jpg" alt="strawberry-cinnamon-roll">
+                    <h3>Strawberry cinnamon roll</h3>
+                    <div class="selection-container">
+                        <label for="strawberry-glazing">Glazing:</label>
+                        <div class="dropdown-container">
+                            <select name="glazing" id="strawberry-glazing">
+                                <option value="keep-original" selected>Keep Original</option>
+                                <option value="sugar-milk">Sugar Milk</option>
+                                <option value="vanilla-milk">Vanilla Milk</option>
+                                <option value="double-chocolate">Double Chocolate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <p>Pack size:</p>
+                        <ul class="radio-set">
+                            <li>
+                                <input type="radio" value="1" name="radio" id="strawberry-1">
+                                <label for="strawberry-1">1</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="3" name="radio" id="strawberry-3">
+                                <label for="strawberry-3">3</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="6" name="radio" id="strawberry-6">
+                                <label for="strawberry-6">6</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="12" name="radio" id="strawberry-12">
+                                <label for="strawberry-12">12</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="selection-container action-container">
+                        <p class="product-price">$ 3.99</p>
+                        <a class="button highlighted" href="#added-to-cart">
+                            Add to Cart
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        
+    </div>
+    
+
 
   </body>
 </html>
