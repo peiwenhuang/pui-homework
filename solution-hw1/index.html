@@ -5,16 +5,25 @@
   <title>Bun Bun Bake Shop</title>
 
   <body>
+    <!-- webpage header: logo, navigation bar -->
+    <!-- cart should display current number of items, total price -->
     <header class="header">
         <img class="logo" src="../assets/logo/logo.svg" alt="logo"/>
         <div class="navBar-container">
             <div>
                 <ul class="navBar">
                     <li>
-                        <a class="highlighted" href="#">PRODUCTS</a>
+                        <a class="highlighted-static" href="#">PRODUCTS</a>
                     </li>
                     <li class="popup-wrap">
-                        <a class="" href="#">CART</a>
+                        <a href="#">
+                            CART
+                            <p class="cart-overview">
+                                1 item
+                                <br>Total: $22.45
+                            </p>
+                        </a>
+                        
                         <!-- popup modal shows upon clicking "Add to Cart": https://codeconvey.com/css-modal-popup-on-button-click/ -->
                         <div id="added-to-cart" class="overlay">
                             <div class="popup">
@@ -56,24 +65,27 @@
                     </div>
                     <div class="selection-container">
                         <p>Pack size:</p>
-                        <ul class="radio-set">
-                            <li>
-                                <input type="radio" value="1" name="radio" id="original-1">
-                                <label for="original-1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="3" name="radio" id="original-3">
-                                <label for="original-3">3</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="6" name="radio" id="original-6">
-                                <label for="original-6">6</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="12" name="radio" id="original-12">
-                                <label for="original-12">12</label>
-                            </li>
-                        </ul>
+                        <!-- use fieldset to group a set of radio buttons -->
+                        <fieldset id="original">
+                            <ul class="radio-set">
+                                <li>
+                                    <input type="radio" value="1" name="original" id="original-1" checked="checked">
+                                    <label for="original-1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="3" name="original" id="original-3">
+                                    <label for="original-3">3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="6" name="original" id="original-6">
+                                    <label for="original-6">6</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="12" name="original" id="original-12">
+                                    <label for="original-12">12</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                     </div>
                     <div class="selection-container action-container">
                         <p class="product-price">$ 2.49</p>
@@ -99,24 +111,26 @@
                     </div>
                     <div class="selection-container">
                         <p>Pack size:</p>
-                        <ul class="radio-set">
-                            <li>
-                                <input type="radio" value="1" name="radio" id="apple-cinnamon-1">
-                                <label for="apple-cinnamon-1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="3" name="radio" id="apple-cinnamon-3">
-                                <label for="apple-cinnamon-3">3</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="6" name="radio" id="apple-cinnamon-6">
-                                <label for="apple-cinnamon-6">6</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="12" name="radio" id="apple-cinnamon-12">
-                                <label for="apple-cinnamon-12">12</label>
-                            </li>
-                        </ul>
+                        <fieldset id="apple-cinnamon">
+                            <ul class="radio-set">
+                                <li>
+                                    <input type="radio" value="1" name="apple-cinnamon" id="apple-cinnamon-1" checked="checked">
+                                    <label for="apple-cinnamon-1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="3" name="apple-cinnamon" id="apple-cinnamon-3">
+                                    <label for="apple-cinnamon-3">3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="6" name="apple-cinnamon" id="apple-cinnamon-6">
+                                    <label for="apple-cinnamon-6">6</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="12" name="apple-cinnamon" id="apple-cinnamon-12">
+                                    <label for="apple-cinnamon-12">12</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                     </div>
                     <div class="selection-container action-container">
                         <p class="product-price">$ 3.49</p>
@@ -136,33 +150,35 @@
                                 <option value="keep-original" selected>Keep Original</option>
                                 <option value="sugar-milk">Sugar Milk</option>
                                 <option value="vanilla-milk">Vanilla Milk</option>
-                                <option value="double-chocolate">Double Chocolate</option>
+                                <option selected value="double-chocolate">Double Chocolate</option>
                             </select>
                         </div>
                     </div>
                     <div class="selection-container">
                         <p>Pack size:</p>
-                        <ul class="radio-set">
-                            <li>
-                                <input type="radio" value="1" name="radio" id="raisin-1">
-                                <label for="raisin-1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="3" name="radio" id="raisin-3">
-                                <label for="raisin-3">3</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="6" name="radio" id="raisin-6">
-                                <label for="raisin-6">6</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="12" name="radio" id="raisin-12">
-                                <label for="raisin-12">12</label>
-                            </li>
-                        </ul>
+                        <fieldset id="raisin">
+                            <ul class="radio-set">
+                                <li>
+                                    <input type="radio" value="1" name="raisin" id="raisin-1">
+                                    <label for="raisin-1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="3" name="raisin" id="raisin-3">
+                                    <label for="raisin-3">3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="6" name="raisin" id="raisin-6" checked="checked">
+                                    <label for="raisin-6">6</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="12" name="raisin" id="raisin-12">
+                                    <label for="raisin-12">12</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                     </div>
                     <div class="selection-container action-container">
-                        <p class="product-price">$ 2.99</p>
+                        <p class="product-price">$ 22.45</p>
                         <a class="button highlighted" href="#added-to-cart">
                             Add to Cart
                         </a>
@@ -185,24 +201,26 @@
                     </div>
                     <div class="selection-container">
                         <p>Pack size:</p>
-                        <ul class="radio-set">
-                            <li>
-                                <input type="radio" value="1" name="radio" id="walnut-1">
-                                <label for="walnut-1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="3" name="radio" id="walnut-3">
-                                <label for="walnut-3">3</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="6" name="radio" id="walnut-6">
-                                <label for="walnut-6">6</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="12" name="radio" id="walnut-12">
-                                <label for="walnut-12">12</label>
-                            </li>
-                        </ul>
+                        <fieldset id="walnut">
+                            <ul class="radio-set">
+                                <li>
+                                    <input type="radio" value="1" name="walnut" id="walnut-1">
+                                    <label for="walnut-1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="3" name="walnut" id="walnut-3">
+                                    <label for="walnut-3">3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="6" name="walnut" id="walnut-6">
+                                    <label for="walnut-6">6</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="12" name="walnut" id="walnut-12">
+                                    <label for="walnut-12">12</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                     </div>
                     <div class="selection-container action-container">
                         <p class="product-price">$ 3.49</p>
@@ -228,24 +246,26 @@
                     </div>
                     <div class="selection-container">
                         <p>Pack size:</p>
-                        <ul class="radio-set">
-                            <li>
-                                <input type="radio" value="1" name="radio" id="d-chocolate-1">
-                                <label for="d-chocolate-1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="3" name="radio" id="d-chocolate-3">
-                                <label for="d-chocolate-3">3</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="6" name="radio" id="d-chocolate-6">
-                                <label for="d-chocolate-6">6</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="12" name="radio" id="d-chocolate-12">
-                                <label for="d-chocolate-12">12</label>
-                            </li>
-                        </ul>
+                        <fieldset id="d-chocolate">
+                            <ul class="radio-set">
+                                <li>
+                                    <input type="radio" value="1" name="d-chocolate" id="d-chocolate-1">
+                                    <label for="d-chocolate-1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="3" name="d-chocolate" id="d-chocolate-3">
+                                    <label for="d-chocolate-3">3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="6" name="d-chocolate" id="d-chocolate-6">
+                                    <label for="d-chocolate-6">6</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="12" name="d-chocolate" id="d-chocolate-12">
+                                    <label for="d-chocolate-12">12</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                     </div>
                     <div class="selection-container action-container">
                         <p class="product-price">$ 3.99</p>
@@ -271,24 +291,26 @@
                     </div>
                     <div class="selection-container">
                         <p>Pack size:</p>
-                        <ul class="radio-set">
-                            <li>
-                                <input type="radio" value="1" name="radio" id="strawberry-1">
-                                <label for="strawberry-1">1</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="3" name="radio" id="strawberry-3">
-                                <label for="strawberry-3">3</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="6" name="radio" id="strawberry-6">
-                                <label for="strawberry-6">6</label>
-                            </li>
-                            <li>
-                                <input type="radio" value="12" name="radio" id="strawberry-12">
-                                <label for="strawberry-12">12</label>
-                            </li>
-                        </ul>
+                        <fieldset id="strawberry">
+                            <ul class="radio-set">
+                                <li>
+                                    <input type="radio" value="1" name="strawberry" id="strawberry-1">
+                                    <label for="strawberry-1">1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="3" name="strawberry" id="strawberry-3">
+                                    <label for="strawberry-3">3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="6" name="strawberry" id="strawberry-6">
+                                    <label for="strawberry-6">6</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="12" name="strawberry" id="strawberry-12">
+                                    <label for="strawberry-12">12</label>
+                                </li>
+                            </ul>
+                        </fieldset>
                     </div>
                     <div class="selection-container action-container">
                         <p class="product-price">$ 3.99</p>
