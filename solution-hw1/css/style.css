@@ -1,4 +1,4 @@
-/* CSS Reset (source: https://meyerweb.com/eric/tools/css/reset/) */
+/* DEFINE CSS Reset (source: https://meyerweb.com/eric/tools/css/reset/) */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,26 +56,29 @@ b {
 }
 /* ENDOF CSS Reset */
 
-/* Define variables */
+/* DEFINE global variables */
 :root {
     --select-border: #FFFF00;
     --select-yellow: var(--select-border);
     font-family: 'Acephimere', 'Arial Narrow', Arial, sans-serif;
 }
-
-.container {
-    margin: 48px;
+.highlighted-static, .highlighted:hover {
+    font-weight: bold;
+    background-color: var(--select-yellow);
 }
+.highlighted:hover {
+    cursor: pointer;
+}
+/* ENDOF global variables */
 
+/* DEFINE header */
 .header {
     display: flex;
 }
-
 .logo {
     margin: 48px;
     width: 35%;
 }
-
 .navBar-container {
     margin: 48px 0;
     width: 100%;
@@ -84,74 +87,60 @@ b {
     flex-direction: column;
     justify-content: space-between;
 }
-
 .navBar {
-    margin-bottom: 24px;
-    padding: 4px 24px;
+    margin-right: 48px;
     display: flex;
     justify-content: flex-end;
 }
-
 .navBar li {
-    padding: 16px 64px;
+    min-width: 30%;
+    padding: 8px 32px;
     list-style-type: none;
     font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-.highlighted-static, .highlighted:hover {
-    font-weight: bold;
-    background-color: var(--select-yellow);
+.navBar li > a {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
-
-.highlighted:hover {
-    cursor: pointer;
+.cart-overview {
+    max-width: fit-content;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: right;
 }
-
 .header-divider {
     width: 100%;
     height: 6px;
+    margin: 0;
     border-style: none;
     border-color: black;
     background-color: black;
 }
-
 .header-desc {
     margin-bottom: 16px;
     font-size: 32px;
     font-weight: light;
 }
 
-.product-container {
-    margin: 24px 48px;
+/* DEFINE containers */
+.container {
+    margin: 64px;
 }
-
+.product-container {
+    margin: 24px 0;
+}
 .product-container > ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    /* margin-bottom: 64px; */
 }
-
-.product-card {
-    width: 28%;
-    margin: 2%;
-    /* box-sizing: border-box; */
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
-    border: 4px solid black;
-}
-
-.product-card h3 {
-    margin: 16px 2px 24px 2px;
-    font-weight: bold;
-    font-size: 24px;
-}
-
 .selection-container {
     margin: 6px 0;
     width: 100%;
@@ -160,38 +149,12 @@ b {
     align-items: center;
     font-size: 18px;
 }
-
-.selection-container > label, .selection-container > p {
-    font-size: inherit;
-    width: auto;
-    flex-grow: 1;
-}
-
-.dropdown-container select {
-    /* to reset select appearance: https://www.w3docs.com/snippets/css/how-to-style-a-select-box-drop-down-with-only-css.html */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none;
-    border: none;
-
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    padding: 4px;
-    /* to inherit font family set in .selection-container */
-    font-family: inherit;
-    font-size: inherit;
-}
-
 .dropdown-container {
     width: 60%;
     margin-left: auto;
     flex-shrink: 0;
-    /* padding: 8px 4px; */
     border: 2px solid black;
     cursor: pointer;
-    /* padding: 0.25em 0.5em; */
     font-size: inherit;
     line-height: 1.5;
     background-color: #fff;
@@ -202,10 +165,62 @@ b {
     /* aligning the arrow: 3. using grid properties */
     align-items: center;
     justify-self: start;
-
     position: relative;
 }
+.action-container {
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* ENDOF containers */
 
+/* DEFINE product details */
+.product-card {
+    width: 29%;
+    margin: 2%;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    border: 4px solid black;
+}
+.product-card h3 {
+    margin: 16px 2px 24px 2px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.selection-container > label, .selection-container > p {
+    font-size: inherit;
+    width: auto;
+    flex-grow: 1;
+}
+.product-price {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/* ENDOF product details */
+
+/* DEFINE dropdown */
+.dropdown-container select {
+    /* reset select appearance: (source: https://www.w3docs.com/snippets/css/how-to-style-a-select-box-drop-down-with-only-css.html) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 4px;
+
+    /* inherit font family set in .selection-container */
+    font-family: inherit;
+    font-size: inherit;
+}
 /* outlining dropdown upon focus */
 .dropdown-container select:focus + .focus {
     position: absolute;
@@ -215,12 +230,10 @@ b {
     bottom: -1px;
     border: 2px solid var(--select-yellow);
 }
-
 /* aligning the arrow: 2. define that our container and the after event use it */
 .dropdown-container select, .dropdown-container::after {
     grid-area: dropdown;
 }
-
 /* custom dropdown arrow: https://moderncss.dev/custom-select-styles-with-pure-css/ */
 .dropdown-container::after {
     content: "";
@@ -237,57 +250,44 @@ b {
     /* adjusting arrow width */
     padding-right: 20px;
 }
+/* ENDOF dropdown */
 
-.action-container {
-    margin: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-
+/* DEFINE radio button set */
 .button {
     width: 60%;
     margin-left: auto;
     flex-shrink: 0;
     padding: 12px 8px;
     border: 2px solid black;
-
+    
+    /* reset properties */
     background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     text-align: center;
 }
-
-.product-price {
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-/* replacing the circle of radio button: https://jsfiddle.net/petrabarus/pPgS7/ */
-
-.radio-set {
+fieldset {
     width: 60%;
+}
+/* replacing the circle of radio button: (source: https://jsfiddle.net/petrabarus/pPgS7/) */
+.radio-set {
+    width: 100%;
     margin-left: auto;
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
 }
-
 .radio-set li {
     display: inline-flex;
     flex-direction: column;
     width: 20%;
 }
-
 .radio-set input {
     width: 0;
     height: 0;
     visibility: hidden;
 }
-
 .radio-set label {
     width: 100%;
     display: inline-flex;
@@ -297,16 +297,17 @@ b {
     padding: 6px;
     border: 2px solid black;
 }
-
 .radio-set label:hover, .radio-set input:checked + label {
-    background-color: #ededed;
+    background-color: #CCCCCC;
 }
+/* ENDOF radio button set */
 
-/* transparency settings for popup overlay: https://codeconvey.com/css-modal-popup-on-button-click/ */
+/* DEFINE popup */
+/* transparency settings for popup overlay: (source: https://codeconvey.com/css-modal-popup-on-button-click/) */
 .overlay {
     position: absolute;
     width: 100%;
-    top: 48px;
+    top: 36px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -314,12 +315,11 @@ b {
     visibility: hidden;
     opacity: 0;
 }
-/* only visible upon targeted */
 .overlay:target {
+    /* only visible upon targeted */
     visibility: visible;
     opacity: 1;
 }
-
 .popup-wrap {
     position: relative;
 }
@@ -330,3 +330,4 @@ b {
     outline: 1px solid #adadad;
     padding: 8px;
 }
+/* ENDOF popup */
