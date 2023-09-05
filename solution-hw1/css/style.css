@@ -75,9 +75,12 @@ b {
 .header {
     display: flex;
 }
+.logo-link {
+    width: 100%;
+}
 .logo {
     margin: 48px;
-    width: 35%;
+    width: 80%;
 }
 .navBar-container {
     margin: 48px 0;
@@ -134,12 +137,16 @@ b {
 .product-container {
     margin: 24px 0;
 }
-.product-container > ul {
+.product-list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
+}
+.product-list-item {
+    width: 29%;
+    margin: 2%;
 }
 .selection-container {
     margin: 6px 0;
@@ -178,10 +185,6 @@ b {
 /* ENDOF containers */
 
 /* DEFINE product details */
-.product-card {
-    width: 29%;
-    margin: 2%;
-}
 .product-card img {
     width: 100%;
     height: auto;
