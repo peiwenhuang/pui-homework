@@ -197,39 +197,3 @@ for (let i = 0; i < flavors.length; i++) {
         selectItem.appendChild(optionItem);
     }
 }
-
-// add options to pack size
-// for (let i = 0; i < flavors.length; i++) {
-//     for (let j = 0; j < packSizes.length; j++) {
-//         let fieldName = flavors[i] + "-pack-size";
-//         let fieldNameSize = fieldName + "-" + parseInt(packSizes[j]);
-
-//         // get <ul> radio-set
-//         let fieldList = document.getElementById(fieldName).firstElementChild;
-
-//         // create <input> & <label> for <li>
-//         let listInput = document.createElement("input");
-//         listInput.type = "radio";
-//         listInput.value = packSizes[j];
-//         listInput.name = fieldName;
-//         listInput.id = fieldNameSize;
-//         // add onChange event
-//         listInput.addEventListener("change", packSizeChange);
-//         // listInput.onclick = packSizeChange(listInput);
-//         let listLabel = document.createElement("label");
-//         listLabel.for = fieldNameSize;
-//         listLabel.innerHTML = packSizes[j];
-
-//         // console.log(listLabel);
-//         // A <label> isn't associated with a form field.
-//         // To fix this issue, nest the <input> in the <label> or provide a for attribute on the <label> that matches a form field id.
-        
-//         // create <li>
-//         let listItem = document.createElement("li");
-//         listItem.appendChild(listInput);
-//         listItem.appendChild(listLabel);
-        
-//         // append to <li>
-//         fieldList.appendChild(listItem);
-//     }
-// }
