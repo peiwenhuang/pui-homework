@@ -33,7 +33,7 @@
                         </a>
                         
                         <!-- popup modal shows upon clicking "Add to Cart": https://codeconvey.com/css-modal-popup-on-button-click/ -->
-                        <div id="added-to-cart" class="overlay">
+                        <div id="added-to-cart" class="overlay hidden">
                             <div class="popup" id="popup-text">
                                 <p>
                                     Added to cart:
@@ -61,35 +61,14 @@
                             <div class="dropdown-container">
                                 <select name="glazing" id="original-glazing" onchange="glazingChange(this)">
                                 </select>
-                                <!-- <span class="focus"></span> -->
                             </div>
                         </div>
                         <div class="selection-container">
                             <p>Pack size:</p>
                             <!-- use fieldset to group a set of radio buttons -->
                             <fieldset id="original-pack-size">
-                                <ul class="radio-set">
-                                    <li>
-                                        <input type="radio" value="1" name="original-pack-size" id="original-pack-size-1"
-                                        onClick="packSizeChange(this)">
-                                        <label for="original-pack-size-1">1</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="3" name="original-pack-size" id="original-pack-size-3"
-                                        onClick="packSizeChange(this)">
-                                        <label for="original-pack-size-3">3</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="6" name="original-pack-size" id="original-pack-size-6"
-                                        onClick="packSizeChange(this)">
-                                        <label for="original-pack-size-6">6</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="12" name="original-pack-size" id="original-pack-size-12"
-                                        onClick="packSizeChange(this)">
-                                        <label for="original-pack-size-12">12</label>
-                                    </li>
-                                </ul>
+                                <div class="radio-set" id="radio-set-1">
+                                </div>
                             </fieldset>
                         </div>
                         <div class="selection-container action-container">
@@ -116,28 +95,8 @@
                         <div class="selection-container">
                             <p>Pack size:</p>
                             <fieldset id="apple-pack-size">
-                                <ul class="radio-set">
-                                    <li>
-                                        <input type="radio" value="1" name="apple-pack-size" id="apple-pack-size-1"
-                                        onClick="packSizeChange(this)">
-                                        <label for="apple-pack-size-1">1</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="3" name="apple-pack-size" id="apple-pack-size-3"
-                                        onClick="packSizeChange(this)">
-                                        <label for="apple-pack-size-3">3</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="6" name="apple-pack-size" id="apple-pack-size-6"
-                                        onClick="packSizeChange(this)">
-                                        <label for="apple-pack-size-6">6</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="12" name="apple-pack-size" id="apple-pack-size-12"
-                                        onClick="packSizeChange(this)">
-                                        <label for="apple-pack-size-12">12</label>
-                                    </li>
-                                </ul>
+                                <div class="radio-set" id="radio-set-2">
+                                </div>
                             </fieldset>
                         </div>
                         <div class="selection-container action-container">
@@ -164,28 +123,8 @@
                         <div class="selection-container">
                             <p>Pack size:</p>
                             <fieldset id="raisin-pack-size">
-                                <ul class="radio-set">
-                                    <li>
-                                        <input type="radio" value="1" name="raisin-pack-size" id="raisin-pack-size-1"
-                                        onClick="packSizeChange(this)">
-                                        <label for="raisin-pack-size-1">1</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="3" name="raisin-pack-size" id="raisin-pack-size-3"
-                                        onClick="packSizeChange(this)">
-                                        <label for="raisin-pack-size-3">3</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="6" name="raisin-pack-size" id="raisin-pack-size-6"
-                                        onClick="packSizeChange(this)">
-                                        <label for="raisin-pack-size-6">6</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="12" name="raisin-pack-size" id="raisin-pack-size-12"
-                                        onClick="packSizeChange(this)">
-                                        <label for="raisin-pack-size-12">12</label>
-                                    </li>
-                                </ul>
+                                <div class="radio-set" id="radio-set-3">
+                                </div>
                             </fieldset>
                         </div>
                         <div class="selection-container action-container">
@@ -212,28 +151,8 @@
                         <div class="selection-container">
                             <p>Pack size:</p>
                             <fieldset id="walnut-pack-size">
-                                <ul class="radio-set">
-                                    <li>
-                                        <input type="radio" value="1" name="walnut-pack-size" id="walnut-pack-size-1"
-                                        onClick="packSizeChange(this)">
-                                        <label for="walnut-pack-size-1">1</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="3" name="walnut-pack-size" id="walnut-pack-size-3"
-                                        onClick="packSizeChange(this)">
-                                        <label for="walnut-pack-size-3">3</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="6" name="walnut-pack-size" id="walnut-pack-size-6"
-                                        onClick="packSizeChange(this)">
-                                        <label for="walnut-pack-size-6">6</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="12" name="walnut-pack-size" id="walnut-pack-size-12"
-                                        onClick="packSizeChange(this)">
-                                        <label for="walnut-pack-size-12">12</label>
-                                    </li>
-                                </ul>
+                                <div class="radio-set" id="radio-set-4">
+                                </div>
                             </fieldset>
                         </div>
                         <div class="selection-container action-container">
@@ -260,28 +179,8 @@
                         <div class="selection-container">
                             <p>Pack size:</p>
                             <fieldset id="doubleChocolate-pack-size">
-                                <ul class="radio-set">
-                                    <li>
-                                        <input type="radio" value="1" name="doubleChocolate-pack-size" id="doubleChocolate-pack-size-1"
-                                        onClick="packSizeChange(this)">
-                                        <label for="doubleChocolate-pack-size-1">1</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="3" name="doubleChocolate-pack-size" id="doubleChocolate-pack-size-3"
-                                        onClick="packSizeChange(this)">
-                                        <label for="doubleChocolate-pack-size-3">3</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="6" name="doubleChocolate-pack-size" id="doubleChocolate-pack-size-6"
-                                        onClick="packSizeChange(this)">
-                                        <label for="doubleChocolate-pack-size-6">6</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="12" name="doubleChocolate-pack-size" id="doubleChocolate-pack-size-12"
-                                        onClick="packSizeChange(this)">
-                                        <label for="doubleChocolate-pack-size-12">12</label>
-                                    </li>
-                                </ul>
+                                <div class="radio-set" id="radio-set-5">
+                                </div>
                             </fieldset>
                         </div>
                         <div class="selection-container action-container">
@@ -308,28 +207,8 @@
                         <div class="selection-container">
                             <p>Pack size:</p>
                             <fieldset id="strawberry-pack-size">
-                                <ul class="radio-set">
-                                    <li>
-                                        <input type="radio" value="1" name="strawberry-pack-size" id="strawberry-pack-size-1"
-                                        onClick="packSizeChange(this)">
-                                        <label for="strawberry-pack-size-1">1</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="3" name="strawberry-pack-size" id="strawberry-pack-size-3"
-                                        onClick="packSizeChange(this)">
-                                        <label for="strawberry-pack-size-3">3</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="6" name="strawberry-pack-size" id="strawberry-pack-size-6"
-                                        onClick="packSizeChange(this)">
-                                        <label for="strawberry-pack-size-6">6</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" value="12" name="strawberry-pack-size" id="strawberry-pack-size-12"
-                                        onClick="packSizeChange(this)">
-                                        <label for="strawberry-pack-size-12">12</label>
-                                    </li>
-                                </ul>
+                                <div class="radio-set" id="radio-set-6">
+                                </div>
                             </fieldset>
                         </div>
                         <div class="selection-container action-container">

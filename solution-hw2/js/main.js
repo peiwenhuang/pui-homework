@@ -128,13 +128,13 @@ function showPopup() {
     
     // open popup
     setTimeout(() => {
-        popup.style.visibility = "visible";
-        popup.style.opacity = "1";
+        popup.classList.remove("hidden");
+        popup.classList.add("visible");
     }, 0);
     // close popup
     setTimeout(() => {
-        popup.style.visibility = "hidden";
-        popup.style.opacity = "0";
+        popup.classList.remove("visible");
+        popup.classList.add("hidden");
     }, 3000);
 }
 
@@ -195,5 +195,26 @@ for (let i = 0; i < flavors.length; i++) {
         optionItem.value = glazingOptions.prices[j];
         optionItem.innerHTML = glazingOptions.types[j];
         selectItem.appendChild(optionItem);
+    }
+}
+
+// add options to pack size
+for (let i = 0; i < flavors.length; i++) {
+    // get <select> element
+    console.log("rendering pack size radio: ");
+    let selectItem = document.getElementById("radio-set-" + (i + 1));
+    console.log(selectItem.innerHTML);
+
+    for (let j = 0; j < packSizes.length; j++) {
+        console.log("j = ", j, ", packSize = ", packSizes[j])
+        // add <input> <label> into <select>
+        // cannot use the approach above to add attribute to element, because it immediately calls onPackSizeChange() upon rendering
+        selectItem.innerHTML += `
+            <input type="radio"
+            value="${packSizes[j]}"
+            name="${flavors[i]}-pack-size" id="${flavors[i]}-pack-size-${packSizes[j]}"
+            onClick="packSizeChange(this)">
+            <label for="${flavors[i]}-pack-size-${packSizes[j]}">${packSizes[j]}</label>
+        `;
     }
 }

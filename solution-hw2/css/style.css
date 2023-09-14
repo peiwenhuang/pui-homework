@@ -280,11 +280,6 @@ fieldset {
     display: flex;
     justify-content: space-between;
 }
-.radio-set li {
-    display: inline-flex;
-    flex-direction: column;
-    width: 20%;
-}
 .radio-set input {
     width: 0;
     height: 0;
@@ -313,14 +308,23 @@ fieldset {
     left: 0;
     right: 0;
     margin: 0 auto;
-    /* transition: opacity 0.3s; */
+    /* ease-in */
+    transition: opacity 0.3s;
     visibility: hidden;
     opacity: 0;
 }
-/* .overlay:target {
+/* fadeIn, fadeOut effect: (source: https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect) */
+.visible {
     visibility: visible;
     opacity: 1;
-} */
+    transition: opacity 0.3s linear;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1.5s, opacity 0.3s linear;
+}
+
 .popup-wrap {
     position: relative;
 }
