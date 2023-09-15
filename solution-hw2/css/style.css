@@ -1,4 +1,4 @@
-/* DEFINE CSS Reset (source: https://meyerweb.com/eric/tools/css/reset/) */
+/* DEFINE CSS Reset (ref: https://meyerweb.com/eric/tools/css/reset/) */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -202,7 +202,7 @@ hr {
 
 /* DEFINE dropdown */
 .dropdown-container select {
-    /* reset select appearance: (source: https://www.w3docs.com/snippets/css/how-to-style-a-select-box-drop-down-with-only-css.html) */
+    /* reset select appearance: (ref: https://www.w3docs.com/snippets/css/how-to-style-a-select-box-drop-down-with-only-css.html) */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -231,7 +231,7 @@ hr {
 .dropdown-container select, .dropdown-container::after {
     grid-area: dropdown;
 }
-/* custom dropdown arrow: https://moderncss.dev/custom-select-styles-with-pure-css/ */
+/* custom dropdown arrow: (ref: https://moderncss.dev/custom-select-styles-with-pure-css/) */
 .dropdown-container::after {
     content: "";
     width: 0.8em;
@@ -267,7 +267,7 @@ button {
 fieldset {
     width: 60%;
 }
-/* replacing the circle of radio button: (source: https://jsfiddle.net/petrabarus/pPgS7/) */
+/* replacing the circle of radio button: (ref: https://jsfiddle.net/petrabarus/pPgS7/) */
 .radio-set {
     width: 100%;
     margin-left: auto;
@@ -275,9 +275,10 @@ fieldset {
     display: flex;
     justify-content: space-between;
 }
+.radio-set div {
+    width: 22%;
+}
 .radio-set input {
-    width: 0;
-    height: 0;
     visibility: hidden;
 }
 .radio-set label {
@@ -295,7 +296,7 @@ fieldset {
 /* ENDOF radio button set */
 
 /* DEFINE popup */
-/* transparency settings for popup overlay: (source: https://codeconvey.com/css-modal-popup-on-button-click/) */
+/* transparency settings for popup overlay: (ref: https://codeconvey.com/css-modal-popup-on-button-click/) */
 .overlay {
     position: absolute;
     width: 100%;
@@ -304,7 +305,7 @@ fieldset {
     right: 0;
     margin: 0 auto;
 }
-/* fadeIn, fadeOut effect: (source: https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect) */
+/* fadeIn, fadeOut effect: (ref: https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect) */
 .visible {
     visibility: visible;
     opacity: 1;
