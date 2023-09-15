@@ -1,4 +1,4 @@
-// const declaration
+// DEFINE const variables
 const flavors = [
     "original", 
     "apple", 
@@ -22,7 +22,12 @@ const glazingOptions = {
     "prices": [0, 0, 0.5, 1.5]
 };
 const packSizes = [1, 3, 6, 12];
+// ENDOF const variables
 
+
+
+
+// DEFINE object strucutures
 // Roll object product
 function Roll(type, price, glazing, packSize) {
     this.type = type;
@@ -30,18 +35,18 @@ function Roll(type, price, glazing, packSize) {
     this.glazing = glazing;
     this.packSize = packSize;
 }
-function clearCurrentRoll(currentRoll) {
-    currentRoll.price = 0;
-    currentRoll.glazing = "";
-    currentRoll.packSize = 1;
-}
 // shopping cart
 function Cart(queue, itemCnt, total) {
     this.queue = queue;
     this.itemCnt = itemCnt;
     this.total = total;
 }
+// ENDOF bject strucutures & functions
 
+
+
+
+// DEFINE global variables
 // product in selection
 let selections = [];
 for (let i = 0; i < flavors.length; i++) {
@@ -50,13 +55,24 @@ for (let i = 0; i < flavors.length; i++) {
 }
 // cart
 let shoppingCart = new Cart ([], 0, 0);
+// ENDOF global variables
 
+
+
+
+// DEFINE functions
 // compute total price (rounded to 2 decimals)
 function roundTwo(num) {
     return Math.round(num * 100) / 100;
 }
 function computePrice(base, glazing, size) {
     return roundTwo(((base + glazing) * size));
+}
+
+function clearCurrentRoll(currentRoll) {
+    currentRoll.price = 0;
+    currentRoll.glazing = "";
+    currentRoll.packSize = 1;
 }
 
 function glazingChange(elm) {
@@ -182,8 +198,12 @@ function addToCart(elm) {
     // clear Roll in selections
     clearCurrentRoll(selections[rollIdx]);
 }
+// ENDOF functinons
 
-// Pre-process
+
+
+
+// STARTOF preprocessing
 // add options to glazing (ref: https://stackoverflow.com/questions/8674618/adding-options-to-select-with-javascript)
 for (let i = 0; i < flavors.length; i++) {
     for (let j = 0; j < numGlazing; j++) {
@@ -218,3 +238,4 @@ for (let i = 0; i < flavors.length; i++) {
         `;
     }
 }
+// ENDOF preprocessing

@@ -62,7 +62,7 @@ b {
     --select-yellow: var(--select-border);
     font-family: 'Acephimere', 'Arial Narrow', Arial, sans-serif;
 }
-.highlighted-static, .highlighted:hover {
+.highlighted:hover {
     font-weight: bold;
     background-color: var(--select-yellow);
 }
@@ -116,12 +116,11 @@ b {
     line-height: 1.2;
     text-align: right;
 }
-.header-divider {
+hr {
     width: 100%;
     height: 6px;
     margin: 0;
     border-style: none;
-    border-color: black;
     background-color: black;
 }
 .header-desc {
@@ -143,7 +142,7 @@ b {
     justify-content: center;
     margin: 0 auto;
 }
-.product-list-item {
+.product-list li {
     width: 29%;
     margin: 2%;
 }
@@ -199,10 +198,6 @@ b {
     width: auto;
     flex-grow: 1;
 }
-.product-price {
-    font-size: inherit;
-    font-weight: inherit;
-}
 /* ENDOF product details */
 
 /* DEFINE dropdown */
@@ -255,7 +250,7 @@ b {
 /* ENDOF dropdown */
 
 /* DEFINE radio button set */
-.button {
+button {
     width: 60%;
     margin-left: auto;
     flex-shrink: 0;
@@ -308,10 +303,6 @@ fieldset {
     left: 0;
     right: 0;
     margin: 0 auto;
-    /* ease-in */
-    transition: opacity 0.3s;
-    visibility: hidden;
-    opacity: 0;
 }
 /* fadeIn, fadeOut effect: (source: https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect) */
 .visible {
