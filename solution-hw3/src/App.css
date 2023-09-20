@@ -280,10 +280,8 @@ fieldset {
     display: flex;
     justify-content: space-between;
 }
-.radio-set li {
-    display: inline-flex;
-    flex-direction: column;
-    width: 20%;
+.radio-set div {
+    width: 22%;
 }
 .radio-set input {
     width: 0;
