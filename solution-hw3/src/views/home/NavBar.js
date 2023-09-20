@@ -12,14 +12,14 @@ function NavBar () {
                     <li className="popup-wrap">
                         <a className="highlighted" href="#">
                             CART
-                            <p className="cart-overview">
+                            <p id="cart-overview">
                                 0 item
                                 <br/>Total: $0.00
                             </p>
                         </a>
                         
                        {/* popup modal shows upon clicking "Add to Cart": https://codeconvey.com/css-modal-popup-on-button-click/ */}
-                        <div id="added-to-cart" className="overlay">
+                        <div id="added-to-cart" className="overlay hidden">
                             <div className="popup">
                                 <p>
                                     Added to cart:
@@ -34,7 +34,7 @@ function NavBar () {
                     </li>
 
                 </ul>
-                <hr className="header-divider"/>
+                <hr/>
             </div>
             <p className="header-desc">Our hand-made cinnamon rolls</p>
         </div>

@@ -3,7 +3,6 @@ import Product from './Product';
 
 function ProductList (props) {
     const [productDetails, setProductDetails] = useState(props.productDetails);
-    console.log("in product details, ", props);
 
     return (
         <div className='container'>
