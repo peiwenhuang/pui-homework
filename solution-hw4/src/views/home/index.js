@@ -1,56 +1,84 @@
-import React from 'react';
-import Header from "./Header";
+import React, { useState } from 'react';
+
+// view
+import Header from './header/Header';
 import ProductList from '../product/ProductList';
+
+const flavorsMap = {
+    "original": "Original Cinammon Roll", 
+    "apple": "Apple Cinammon Roll", 
+    "raisin": "Raisin Cinammon Roll", 
+    "walnut": "Walnut Cinammon Roll", 
+    "doubleChocolate": "Double Chocolate Cinammon Roll", 
+    "strawberry": "Strawberry Cinammon Roll"
+}
+
+// DEIFINE utility functions
+function roundTwo(num) {
+    return Math.round(num * 100) / 100;
+}
+// ENDOF utility functions
 
 const productDetails = [
     {
         imgSrc: "./assets/products/original-cinnamon-roll.jpg",
-        name: "Original cinnamon roll",
-        price: 2.49,
+        type: "original"
     },
     {
         imgSrc: "./assets/products/apple-cinnamon-roll.jpg",
-        name: "Apple cinnamon roll",
-        price: 3.49
+        type: "apple"
     },
     {
         imgSrc: "./assets/products/raisin-cinnamon-roll.jpg",
-        name: "Raisin cinnamon roll",
-        price: 2.99
+        type: "raisin",
     },
     {
         imgSrc: "./assets/products/walnut-cinnamon-roll.jpg",
-        name: "Walnut cinnamon roll",
-        price: 3.49
+        type: "walnut",
     },
     {
         imgSrc: "./assets/products/double-chocolate-cinnamon-roll.jpg",
-        name: "Double-chocolate cinammon roll",
-        price: 3.99
+        type: "doubleChocolate"
     },
     {
         imgSrc: "./assets/products/strawberry-cinnamon-roll.jpg",
-        name: "Strawberry cinammon roll",
-        price: 3.99
+        type: "strawberry"
     }
 ];
-const glazingOptions = [
-    "Keep Original",
-    "Sugar Milk",
-    "Vanilla Milk",
-    "Double Chocolate"
-];
-const packSizeOptions = [1, 3, 6, 12];
-
 
 function Home () {
+    // constructor
+    const [cart, setCart] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
+
+    const addtoCart = (type, glazing, packSize, price) => {
+        setCart([
+            ...cart,
+            {
+                type: type,
+                glazing: glazing,
+                packSize: packSize,
+                price: price
+            }
+        ]);
+        setShowPopup(true);
+    };
+    
+
     return (
         <div>
-            <Header />
+            <Header
+            flavorsMap={flavorsMap}
+            cart={cart}
+            showPopup={showPopup}
+            setShowPopup={setShowPopup}
+            roundTwo={roundTwo}
+            />
             <ProductList
             productDetails={productDetails}
-            glazingOptions={glazingOptions}
-            packSizeOptions={packSizeOptions}
+            flavorsMap={flavorsMap}
+            addtoCart={addtoCart}
+            roundTwo={roundTwo}
             />
         </div>
         
