@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="./js/main.js" type="text/javascript" defer></script>
+        <title>Bun Bun Bake Shop</title>
+    </head>
+
+  <body>
+    <!-- webpage header: logo, navigation bar -->
+    <!-- cart should display current number of items, total price -->
+    <header class="header">
+        <a href="#" class="logo-link">
+            <img class="logo" src="../assets/logo/logo.svg" alt="logo">
+        </a>
+        <div class="navBar-container">
+            <div>
+                <ul class="navBar">
+                    <li>
+                        <a class="highlighted" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="popup-wrap">
+                        <a class="highlighted" href="#">
+                            CART
+                            <div id="cart-overview">
+                                <p>
+                                    0 items
+                                    <br>
+                                    Total: $0.00
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <!-- popup modal shows upon clicking "Add to Cart": (ref: https://codeconvey.com/css-modal-popup-on-button-click/) -->
+                        <div id="added-to-cart" class="overlay hidden">
+                            <div class="popup" id="popup-text">
+                                <p>
+                                    Added to cart:
+                                    <br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+            <p class="header-desc">Our hand-made cinnamon rolls</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="product-container">
+            <ul class="product-list">
+                <li>
+                    <div class="product-card">
+                        <img src="../assets/products/original-cinnamon-roll.jpg" alt="original-cinnamon-roll">
+                        <h3>Original cinnamon roll</h3>
+                        <div class="selection-container">
+                            <label for="original-glazing">Glazing:</label>
+                            <div class="dropdown-container">
+                                <select name="glazing" id="original-glazing" onchange="glazingChange(this)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection-container">
+                            <p>Pack size:</p>
+                            <!-- use fieldset to group a set of radio buttons -->
+                            <fieldset id="original-pack-size">
+                                <div class="radio-set" id="radio-set-1">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="selection-container action-container">
+                            <p id="original-price">$ 2.49</p>
+                            <button class="highlighted" id="original-add-to-cart"
+                            onclick="addToCart(this)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="product-card">
+                        <img src="../assets/products/apple-cinnamon-roll.jpg" alt="apple-cinnamon-roll">
+                        <h3>Apple cinnamon roll</h3>
+                        <div class="selection-container">
+                            <label for="apple-glazing">Glazing:</label>
+                            <div class="dropdown-container">
+                                <select name="glazing" id="apple-glazing" onchange="glazingChange(this)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection-container">
+                            <p>Pack size:</p>
+                            <fieldset id="apple-pack-size">
+                                <div class="radio-set" id="radio-set-2">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="selection-container action-container">
+                            <p id="apple-price">$ 3.49</p>
+                            <button class="highlighted" id="apple-add-to-cart"
+                            onclick="addToCart(this)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="product-card">
+                        <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="raisin-cinnamon-roll">
+                        <h3>Raisin cinnamon roll</h3>
+                        <div class="selection-container">
+                            <label for="raisin-glazing">Glazing:</label>
+                            <div class="dropdown-container">
+                                <select name="glazing" id="raisin-glazing" onchange="glazingChange(this)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection-container">
+                            <p>Pack size:</p>
+                            <fieldset id="raisin-pack-size">
+                                <div class="radio-set" id="radio-set-3">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="selection-container action-container">
+                            <p id="raisin-price">$ 2.99</p>
+                            <button class="highlighted" id="raisin-add-to-cart"
+                            onclick="addToCart(this)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="product-card">
+                        <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="walnut-cinnamon-roll">
+                        <h3>Walnut cinnamon roll</h3>
+                        <div class="selection-container">
+                            <label for="walnut-glazing">Glazing:</label>
+                            <div class="dropdown-container">
+                                <select name="glazing" id="walnut-glazing" onchange="glazingChange(this)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection-container">
+                            <p>Pack size:</p>
+                            <fieldset id="walnut-pack-size">
+                                <div class="radio-set" id="radio-set-4">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="selection-container action-container">
+                            <p id="walnut-price">$ 3.49</p>
+                            <button class="highlighted" id="walnut-add-to-cart"
+                            onclick="addToCart(this)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="product-card">
+                        <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="doubleChocolate-cinnamon-roll">
+                        <h3>Double-chocolate cinnamon roll</h3>
+                        <div class="selection-container">
+                            <label for="doubleChocolate-glazing">Glazing:</label>
+                            <div class="dropdown-container">
+                                <select name="glazing" id="doubleChocolate-glazing" onchange="glazingChange(this)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection-container">
+                            <p>Pack size:</p>
+                            <fieldset id="doubleChocolate-pack-size">
+                                <div class="radio-set" id="radio-set-5">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="selection-container action-container">
+                            <p id="doubleChocolate-price">$ 3.99</p>
+                            <button class="highlighted" id="doubleChocolate-add-to-cart"
+                            onclick="addToCart(this)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="product-card">
+                        <img src="../assets/products/strawberry-cinnamon-roll.jpg" alt="strawberry-cinnamon-roll">
+                        <h3>Strawberry cinnamon roll</h3>
+                        <div class="selection-container">
+                            <label for="strawberry-glazing">Glazing:</label>
+                            <div class="dropdown-container">
+                                <select name="glazing" id="strawberry-glazing" onchange="glazingChange(this)">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection-container">
+                            <p>Pack size:</p>
+                            <fieldset id="strawberry-pack-size">
+                                <div class="radio-set" id="radio-set-6">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="selection-container action-container">
+                            <p id="strawberry-price">$ 3.99</p>
+                            <button class="highlighted" id="strawberry-add-to-cart"
+                            onclick="addToCart(this)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        
+    </div>
+    
+
+
+  </body>
+</html>
