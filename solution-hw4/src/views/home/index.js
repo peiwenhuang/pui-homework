@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Header from './header/Header';
 import ProductList from '../product/ProductList';
 
+// DEFINE global variables
+
 const flavorsMap = {
     "original": "Original Cinammon Roll", 
     "apple": "Apple Cinammon Roll", 
@@ -12,6 +14,7 @@ const flavorsMap = {
     "doubleChocolate": "Double Chocolate Cinammon Roll", 
     "strawberry": "Strawberry Cinammon Roll"
 }
+// ENDOF global variables
 
 // DEIFINE utility functions
 function roundTwo(num) {
@@ -66,7 +69,7 @@ function Home () {
     
 
     return (
-        <div>
+        <main>
             <Header
             flavorsMap={flavorsMap}
             cart={cart}
@@ -80,7 +83,7 @@ function Home () {
             addtoCart={addtoCart}
             roundTwo={roundTwo}
             />
-        </div>
+        </main>
         
     );
 }
