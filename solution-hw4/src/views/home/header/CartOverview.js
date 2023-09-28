@@ -37,17 +37,15 @@ function CartOverview (props) {
     let visibility = "hidden";
     // whether to show popup, if true -> show for 3s
     if(props.showPopup) {
-        // console.log("checking props.showPopup to be true");
         visibility = "visible";
         // show
         setTimeout(() => {
-            // console.log("about to be false??");
             props.setShowPopup(false);
         }, 3000);        
     }
 
     return (
-        <div>
+        <li className="popup-wrap">
             <a className="highlighted" href="#">
                 CART
                 <p id="cart-overview">
@@ -62,7 +60,7 @@ function CartOverview (props) {
             packSize={packSize}
             price={price}
             />
-        </div>
+        </li>
     );
 }
 

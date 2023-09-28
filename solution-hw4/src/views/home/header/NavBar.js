@@ -16,15 +16,13 @@ function NavBar (props) {
                         <a className="highlighted" href="#">PRODUCTS</a>
                     </li>
 
-                    <li className="popup-wrap">
-                        <CartOverview
-                        flavorsMap={props.flavorsMap}
-                        cart={props.cart}
-                        showPopup={props.showPopup}
-                        setShowPopup={props.setShowPopup}
-                        roundTwo={props.roundTwo}
-                        />
-                    </li>
+                    <CartOverview
+                    flavorsMap={props.flavorsMap}
+                    cart={props.cart}
+                    showPopup={props.showPopup}
+                    setShowPopup={props.setShowPopup}
+                    roundTwo={props.roundTwo}
+                    />
 
                 </ul>
                 <hr/>
