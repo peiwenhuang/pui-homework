@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 // QUESTIONS:
 // hover packSize button background change?
 
-
 // DEFINE global variables
 const flavors = [
     "original", 
@@ -13,7 +12,6 @@ const flavors = [
     "doubleChocolate", 
     "strawberry"
 ];
-
 const glazings = ["Keep Orginal", "Sugar Milk", "Vanilla Milk", "Double Chocolate"];
 const packSizes = [1, 3, 6, 12];
 // ENDOF global variables
@@ -31,37 +29,16 @@ function Roll (props) {
     const price = props.price;
     const glazing = props.glazing;
     const packSize = props.packSize;
-    // const [price, setPrice] = useState(props.price);
-    // const [glazing, setGlazing] = useState(props.glazing);
-    // const [packSize, setPackSize] = useState(props.packSize);
 
     const onGlazingChange = (elm) => {
         // update glazing
         props.updateGlazing(type, glazings[elm.nativeEvent.target.selectedIndex]);
-        // update();
     };
 
     const onPackSizeChange = (elm) => {
         // update packSize
         props.updatePackSize(type, Number(elm.nativeEvent.target.value));
-        // update();
     };
-
-    // const update = () => {
-    //     // update price
-    //     const basePrice = basePriceMap[type];
-    //     const glazingPrice = glazingPrices[glazings.indexOf(glazing)]; 
-
-    //     props.updatePrice(type, computePrice(basePrice, glazingPrice, packSize));
-    // }
-    
-    useEffect(() => {
-    //    update();
-    });
-
-    // const computePrice = (basePrice, glazingPrice, packSize) => {
-    //     return props.roundTwo(((basePrice + glazingPrice) * packSize));
-    // };
 
     return (
         <div className="product-card">
@@ -73,13 +50,13 @@ function Roll (props) {
                     <select
                     name="glazing"
                     id={`${type}-glazing`}
-                    onChange={onGlazingChange}>
+                    onChange={onGlazingChange}
+                    value={glazing}>
                         {
                             glazings.map((glazingOption, key) => {
                                 return (
                                     <option
-                                    value={glazingOption}
-                                    selected={glazing === glazingOption}>
+                                    value={glazingOption}>
                                         {glazingOption}
                                     </option>
                                 );

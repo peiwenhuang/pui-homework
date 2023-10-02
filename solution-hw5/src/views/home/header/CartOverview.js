@@ -4,9 +4,9 @@ import Popup from './Popup';
 function CartOverview (props) {
     // props:
     // flavorsMap
-    // cart
-    // showPopup
-    // setShowPopup
+    // product
+    // cart (type, glazing, packSize, price, imgSrc)
+    // removefromCart
     // roundTwo
     const flavorsMap = props.flavorsMap;
     const cart = props.cart;
@@ -26,41 +26,53 @@ function CartOverview (props) {
         itemTxt = `${itemCnt} item`;
     }
 
-    // popup info
-    let name, glazing, packSize, price = null;
-    if(itemCnt) {
-        name = flavorsMap[cart[cart.length - 1].type];
-        glazing = cart[cart.length - 1].glazing;
-        packSize = cart[cart.length - 1].packSize;
-        price = cart[cart.length - 1].price;
-    }
-    let visibility = "hidden";
-    // whether to show popup, if true -> show for 3s
-    if(props.showPopup) {
-        visibility = "visible";
-        // show
-        setTimeout(() => {
-            props.setShowPopup(false);
-        }, 3000);        
+    const cartContent = () => {
+        if(!itemCnt) {
+            return (
+                <div className='info-msg'>
+                    <p>The cart is empty!</p>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+                    <div className="cart-overview">
+                        <h2>Shopping Cart ({itemTxt})</h2>
+                        <h2>Total: ${displayPrice}</h2>
+                    </div>
+                    <ul className="cart-item-list">
+                        {
+                            cart.map((item, key) => {
+                                let name = flavorsMap[item.type];
+                                return (
+                                    <li>
+                                        <img src={item.imgSrc} alt={name} />
+                                        <h3>{name}</h3>
+                                        <h3>Glazing: {item.glazing}</h3>
+                                        <h3>Pack Size: {item.packSize}</h3>
+                                        <h3><b>${item.price}</b></h3>
+                                        
+                                        <button
+                                        onClick={() => {
+                                            props.removefromCart(key);
+                                        }}>
+                                            Remove
+                                        </button>
+                                    </li>
+                                );
+                            })
+                        }
+                    </ul>
+                </div>
+            );
+        }
     }
 
     return (
-        <li className="popup-wrap">
-            <a className="highlighted" href="#">
-                CART
-                <p id="cart-overview">
-                    {itemTxt}
-                    <br/>Total: ${displayPrice}
-                </p>
-            </a>    
-            <Popup
-            visibility={visibility}
-            name={name}
-            glazing={glazing}
-            packSize={packSize}
-            price={price}
-            />
-        </li>
+        <div className="cart-container">
+            {cartContent()}
+        </div>
     );
 }
 

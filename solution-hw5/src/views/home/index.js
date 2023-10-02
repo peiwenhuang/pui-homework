@@ -70,20 +70,33 @@ const productDetails = [
 function Home () {
     // constructor
     const [cart, setCart] = useState([]);
+    const [showCart, setShowCart] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
 
     const addtoCart = (type, glazing, packSize, price) => {
+        let idx = productDetails.map(e => { return e.type }).indexOf(type);
         setCart([
             ...cart,
             {
                 type: type,
                 glazing: glazing,
                 packSize: packSize,
-                price: price
+                price: price,
+                imgSrc: productDetails[idx].imgSrc
             }
         ]);
         setShowPopup(true);
     };
+
+    const removefromCart = (idx) => {
+        // remove item from cart
+        setCart(cart.filter((e, i) => i !== idx ));
+    }
+
+    const toggleShowCart = (e) => {
+        e.preventDefault();
+        setShowCart(!showCart);
+    }
     
 
     return (
@@ -91,11 +104,14 @@ function Home () {
             <Header
             flavorsMap={flavorsMap}
             cart={cart}
+            toggleShowCart={toggleShowCart}
             showPopup={showPopup}
             setShowPopup={setShowPopup}
-            roundTwo={roundTwo}
             />
             <ProductList
+            showCart={showCart}
+            cart={cart}
+            removefromCart={removefromCart}
             productDetails={productDetails}
             flavorsMap={flavorsMap}
             addtoCart={addtoCart}

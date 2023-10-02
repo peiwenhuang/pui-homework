@@ -109,13 +109,6 @@ b {
     flex-direction: column;
     align-items: end;
 }
-#cart-overview {
-    max-width: fit-content;
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.2;
-    text-align: right;
-}
 hr {
     width: 100%;
     height: 6px;
@@ -140,7 +133,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    margin: 0 auto;
+    margin: 16px auto;
 }
 .product-list li {
     width: 29%;
@@ -180,13 +173,17 @@ hr {
     font-size: 24px;
     font-weight: bold;
 }
+.cart-container {
+    border-top: 4px solid #736665;
+    border-bottom: 4px solid #736665;
+}
 /* ENDOF containers */
 
 /* DEFINE product details */
 .product-card img {
     width: 100%;
     height: auto;
-    border: 4px solid black;
+    border: 2px solid black;
 }
 .product-card h3 {
     margin: 16px 2px 24px 2px;
@@ -332,12 +329,10 @@ fieldset {
 /* DEFINE search bar */
 .search-sort-container {
     display: flex;
-    flex-direction: row;
 }
 .search-input {
-    margin: 2%;
+    margin: 16px 0;
     display: flex;
-    flex-direction: row;
     align-items: center;
     border: 1px solid black;
 }
@@ -356,20 +351,62 @@ fieldset {
     background-color: var(--select-yellow);
     cursor: pointer;
 }
-.no-match-msg {
+.info-msg {
     text-align: center;
     font-weight: bold;
+    margin: 16px 0;
 }
 /* ENDOF search bar */
 
 /* DEFINE sort */
 .sort-dropdown {
+    margin: 0 16px;
     width: 12em;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 .sort-dropdown .dropdown-container {
-    width: 65%;
+    width: 70%;
     border: 1px solid black;
 }
+/* ENDOF sort */
+
+/* DEFINE cart */
+.cart-overview {
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.cart-item-list {
+    display: flex;
+    justify-content: flex-start;
+}
+.cart-item-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+}
+.cart-item-list h3 {
+    line-height: 1.2;
+}
+.cart-item-list img {
+    width: 100px;
+    border: 2px solid black;
+    margin-bottom: 8px;
+}
+.cart-item-list button {
+    margin: 8px;
+    padding: 0;
+    border: none;
+    width: auto;
+    text-decoration: underline;
+    font-size: 16px;
+}
+.cart-item-list button:hover {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+/* ENDOF cart */

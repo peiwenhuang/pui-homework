@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 // view
 import Search from '../../component/Search';
+import CartOverview from '../home/header/CartOverview';
 import Roll from './Roll';
 
+// DEFINE global variables
 const basePriceMap = {
     "original": 2.49,
     "apple": 3.49, 
@@ -18,12 +20,16 @@ const glazingMap = {
     "Vanilla Milk": 0.5,
     "Double Chocolate": 1.5
 }
-// const glazingPrices = [0, 0, 0.5, 1.5];
+// ENDOF global variables
 
 function ProductList (props) {
     // props:
     // (this)
+    // showCart
     // productDetails (type, imgSrc, price, glazing, packSize)
+    // (CartOverview)
+    // cart
+    // removefromCart
     // (Roll)
     // flavorsMap
     // addtoCart
@@ -60,14 +66,6 @@ function ProductList (props) {
         const glazingPrice = glazingMap[newGlazing];
         return  props.roundTwo(((basePrice + glazingPrice) * newPackSize));
     }
-
-    // const update = () => {
-    //     // update price
-    //     const basePrice = basePriceMap[type];
-    //     const glazingPrice = glazingPrices[glazings.indexOf(glazing)]; 
-
-    //     props.updatePrice(type, computePrice(basePrice, glazingPrice, packSize));
-    // }
 
     const getIdx = (type) => {
         return products.map(e => { return e.type }).indexOf(type);
@@ -121,6 +119,21 @@ function ProductList (props) {
         setProducts(prodSort);
     }
 
+    const cartView = () => {
+        if(props.showCart) {
+            return (
+                <CartOverview
+                flavorsMap={props.flavorsMap}
+                cart={props.cart}
+                removefromCart={props.removefromCart}
+                roundTwo={props.roundTwo}/>
+            );
+        }
+        else {
+            return null;
+        }
+    }
+
     const noContent = () => {
         let match = false;
         for(let i = 0; i < filter.length; i++) {
@@ -131,7 +144,7 @@ function ProductList (props) {
         }
         if(!match) {
             return (
-                <div className='no-match-msg'>
+                <div className='info-msg'>
                     <p>No Match!</p>
                 </div>
             );
@@ -142,13 +155,14 @@ function ProductList (props) {
     };
 
     return (
-        <div className='container'>
+        <div className="container">
             <main className="product-container">
                 <Search
                 filter={filter}
                 queryFilter={queryFilter}
                 sortBy={sortBy}
                 />
+                {cartView()}
                 {noContent()}
                 <ul className="product-list">
 
