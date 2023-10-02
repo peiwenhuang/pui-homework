@@ -25,27 +25,45 @@ function roundTwo(num) {
 const productDetails = [
     {
         imgSrc: "./assets/products/original-cinnamon-roll.jpg",
-        type: "original"
+        type: "original",
+        price: 2.49,
+        glazing: "Keep Orginal",
+        packSize: 1
     },
     {
         imgSrc: "./assets/products/apple-cinnamon-roll.jpg",
-        type: "apple"
+        type: "apple",
+        price: 3.49,
+        glazing: "Keep Orginal",
+        packSize: 1
     },
     {
         imgSrc: "./assets/products/raisin-cinnamon-roll.jpg",
         type: "raisin",
+        price: 2.99,
+        glazing: "Keep Orginal",
+        packSize: 1
     },
     {
         imgSrc: "./assets/products/walnut-cinnamon-roll.jpg",
         type: "walnut",
+        price: 3.49,
+        glazing: "Keep Orginal",
+        packSize: 1
     },
     {
         imgSrc: "./assets/products/double-chocolate-cinnamon-roll.jpg",
-        type: "doubleChocolate"
+        type: "doubleChocolate",
+        price: 3.99,
+        glazing: "Keep Orginal",
+        packSize: 1
     },
     {
         imgSrc: "./assets/products/strawberry-cinnamon-roll.jpg",
-        type: "strawberry"
+        type: "strawberry",
+        price: 3.99,
+        glazing: "Keep Orginal",
+        packSize: 1
     }
 ];
 

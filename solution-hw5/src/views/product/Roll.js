@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+// QUESTIONS:
+// hover packSize button background change?
+
+
 // DEFINE global variables
 const flavors = [
     "original", 
@@ -9,45 +13,55 @@ const flavors = [
     "doubleChocolate", 
     "strawberry"
 ];
-const basePrices = [2.49, 3.49, 2.99, 3.49, 3.99, 3.99];
+
 const glazings = ["Keep Orginal", "Sugar Milk", "Vanilla Milk", "Double Chocolate"];
-const glazingPrices = [0, 0, 0.5, 1.5];
 const packSizes = [1, 3, 6, 12];
 // ENDOF global variables
 
 function Roll (props) {
     // props:
-    // type, imgSrc
+    // type, imgSrc, price
     // flavorsMap
     // addtoCart
     // roundTwo
+    // updateGlazing
+    // updatePackSize
     const type = props.type;
     const name = props.flavorsMap[type];
-    const [price, setPrice] = useState(basePrices[flavors.indexOf(type)]);
-    const [glazing, setGlazing] = useState(glazings[0]);
-    const [packSize, setPackSize] = useState(packSizes[0]);
+    const price = props.price;
+    const glazing = props.glazing;
+    const packSize = props.packSize;
+    // const [price, setPrice] = useState(props.price);
+    // const [glazing, setGlazing] = useState(props.glazing);
+    // const [packSize, setPackSize] = useState(props.packSize);
 
     const onGlazingChange = (elm) => {
         // update glazing
-        setGlazing(glazings[elm.nativeEvent.target.selectedIndex]);
+        props.updateGlazing(type, glazings[elm.nativeEvent.target.selectedIndex]);
+        // update();
     };
 
     const onPackSizeChange = (elm) => {
         // update packSize
-        setPackSize(Number(elm.nativeEvent.target.value));
+        props.updatePackSize(type, Number(elm.nativeEvent.target.value));
+        // update();
     };
+
+    // const update = () => {
+    //     // update price
+    //     const basePrice = basePriceMap[type];
+    //     const glazingPrice = glazingPrices[glazings.indexOf(glazing)]; 
+
+    //     props.updatePrice(type, computePrice(basePrice, glazingPrice, packSize));
+    // }
     
     useEffect(() => {
-        // update price
-        const basePrice = basePrices[flavors.indexOf(type)];
-        const glazingPrice = glazingPrices[glazings.indexOf(glazing)];  
-        
-        setPrice(updatePrice(basePrice, glazingPrice, packSize));
-    }, [glazing, packSize]);
+    //    update();
+    });
 
-    const updatePrice = (basePrice, glazingPrice, packSize) => {
-        return props.roundTwo(((basePrice + glazingPrice) * packSize));
-    };
+    // const computePrice = (basePrice, glazingPrice, packSize) => {
+    //     return props.roundTwo(((basePrice + glazingPrice) * packSize));
+    // };
 
     return (
         <div className="product-card">
@@ -61,9 +75,13 @@ function Roll (props) {
                     id={`${type}-glazing`}
                     onChange={onGlazingChange}>
                         {
-                            glazings.map((glazingOption, i) => {
+                            glazings.map((glazingOption, key) => {
                                 return (
-                                    <option value={glazingOption}>{glazingOption}</option>
+                                    <option
+                                    value={glazingOption}
+                                    selected={glazing === glazingOption}>
+                                        {glazingOption}
+                                    </option>
                                 );
                             })
                         }
@@ -75,18 +93,21 @@ function Roll (props) {
                 <fieldset id={`${type}-pack-size`}>
                     <div className="radio-set" id={`radio-set-${type}`}>
                         {
-                            packSizes.map((packSize, i) => {
+                            packSizes.map((curSize, key) => {
                                 return (
                                     <div>
                                         <input type="radio"
-                                        value={packSize}
+                                        value={curSize}
                                         name={`${type}-pack-size`}
-                                        id={`${type}-pack-size-${packSize}`}
-                                        onClick={onPackSizeChange}
+                                        id={`${type}-pack-size-${curSize}`}
+                                        onChange={onPackSizeChange}
                                         />
                                         <label
-                                        htmlFor={`${type}-pack-size-${packSize}`}>
-                                            {packSize}
+                                        style={{
+                                            backgroundColor: packSize === curSize ? "#cccccc": "transparent"
+                                        }}
+                                        htmlFor={`${type}-pack-size-${curSize}`}>
+                                            {curSize}
                                         </label>
                                     </div>
                                 );
