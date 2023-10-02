@@ -10,7 +10,8 @@ function Sort (props) {
                 <select
                 name="sort"
                 id="sort"
-                onChange={props.sortBy} >
+                onChange={props.sortBy}>
+                    <option disabled selected value>--</option>
                     <option value="name">Name</option>
                     <option value="basePrice">Base Price</option>
                 </select>
