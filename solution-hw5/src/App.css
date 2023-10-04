@@ -380,13 +380,15 @@ fieldset {
 }
 .cart-item-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
 }
 .cart-item-list li {
+    width: 29%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 16px;
+    margin: 2%;
 }
 .cart-item-list h3 {
     line-height: 1.2;
