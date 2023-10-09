@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // view
 import Header from './header/Header';
@@ -67,8 +67,15 @@ const productDetails = [
 ];
 
 function Home () {
+    const retrieve = () => {
+        return JSON.parse(localStorage.getItem("cartData"));
+    }
+    const update = () => {
+        localStorage.setItem("cartData", JSON.stringify(cart));
+    }
+
     // constructor
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(retrieve() || []);
     const [showCart, setShowCart] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
 
@@ -96,7 +103,11 @@ function Home () {
         e.preventDefault();
         setShowCart(!showCart);
     }
-    
+
+    useEffect(() => {
+        update();
+        console.log("after update, localStorage: ", retrieve());
+    }, [cart]);
 
     return (
         <main>
