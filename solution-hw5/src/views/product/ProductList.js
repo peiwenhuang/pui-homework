@@ -88,7 +88,6 @@ function ProductList (props) {
 
     const sortBy = (elm) => {
         const criterion = elm.nativeEvent.target.value;
-        console.log("criterion: ", criterion);
         // copy productDetails
         let prodSort = products.map(elm => elm);
         // add filter/mapped name to array to be sorted
@@ -107,7 +106,6 @@ function ProductList (props) {
                 basePriceMap[a.type] > basePriceMap[b.type] ? 1: -1
             );
         }
-        console.log("after sorting: ", prodSort);
         // extract filter and setFilter
         setFilter(() => {
             let newFilter = [...filter];
@@ -157,13 +155,13 @@ function ProductList (props) {
     return (
         <div className="container">
             <main className="product-container">
+                {cartView()}
+                {noContent()}
                 <Search
                 filter={filter}
                 queryFilter={queryFilter}
                 sortBy={sortBy}
                 />
-                {cartView()}
-                {noContent()}
                 <ul className="product-list">
 
                     {
